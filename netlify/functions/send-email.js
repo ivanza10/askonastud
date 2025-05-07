@@ -2,6 +2,11 @@ const nodemailer = require('nodemailer');
 
 // Функция для создания транспорта почты
 const createTransporter = () => {
+  // Проверяем наличие необходимых переменных окружения
+  if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS || !process.env.EMAIL_TO) {
+    throw new Error('Missing required environment variables: EMAIL_USER, EMAIL_PASS, or EMAIL_TO');
+  }
+
   return nodemailer.createTransport({
     host: 'smtp.mail.ru',
     port: 465,
@@ -10,6 +15,8 @@ const createTransporter = () => {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
     },
+    debug: true, // Включаем отладку
+    logger: true // Включаем логирование
   });
 };
 
@@ -31,6 +38,11 @@ exports.handler = async (event, context) => {
   }
 
   try {
+    // Проверяем наличие тела запроса
+    if (!event.body) {
+      throw new Error('Request body is empty');
+    }
+
     console.log('Received request body:', event.body);
     const { lastName, firstName, phone, email, direction } = JSON.parse(event.body);
     
