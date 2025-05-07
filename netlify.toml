@@ -1,0 +1,13 @@
+[build]
+  command = "cd front && npm install && npm run build"
+  publish = "front/dist"
+  functions = "netlify/functions"
+
+[dev]
+  command = "cd front && npm run dev"
+  port = 8888
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200 

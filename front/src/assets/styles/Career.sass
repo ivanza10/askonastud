@@ -1,0 +1,169 @@
+.career-section
+    padding-top: 4rem
+    color: #fff
+    position: relative
+    z-index: 1
+    overflow-x: hidden
+    
+    h1.title
+        color: #fff
+        text-align: center
+        margin-bottom: 3rem
+        font-weight: 700
+        position: relative
+        display: inline-block
+        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3)
+            
+.career-card
+    border: none
+    border-radius: 15px
+    
+    transition: all 0.3s ease
+    margin-bottom: 1.5rem
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2)
+    overflow: hidden
+    width: 100%
+    
+    &:hover
+        transform: translateY(-8px)
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4)
+    
+    &_text
+        color: #fff
+        font-size: 1.15rem
+        font-weight: 600
+    
+    .card-body
+        padding: 1.5rem
+        
+.blue
+    background-color: rgba(205, 237, 255, 0.95)
+    color: #0a1525
+    border-left: 4px solid #00BABF
+    
+.yellow
+    background-color: rgba(255, 204, 51, 0.95)
+    color: #0a1525
+    border-left: 4px solid #ff9900
+
+.card-title
+    font-size: 1.2rem
+    font-weight: bold
+    margin-bottom: 1rem
+    max-width: 100%
+
+    h5.text_medium
+        font-weight: 600
+        line-height: 1.4
+        margin-bottom: 0
+        word-wrap: break-word
+        
+.card-text
+    font-size: 1rem
+    
+.career-section_row
+    min-height: 400px
+    
+
+.career-image
+    max-height: 500px
+    object-fit: contain
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4))
+    transition: all 0.5s ease
+
+.career-section_row__content
+    padding-left: 2rem
+    
+    @media (max-width: 992px)
+        width: 100%
+        padding: 0 15px
+
+@media (max-width: 768px)
+    .career-section
+        padding: 3rem 0
+        
+    h1.title
+        font-size: 2.5rem
+        text-align: center
+        margin-left: auto
+        margin-right: auto
+        
+    .career-section_row__content
+        padding: 0 15px
+    
+    .career-tour-btn
+        width: 100%
+        justify-content: center
+    
+    .container
+        padding-left: 15px
+        padding-right: 15px
+        overflow-x: hidden
+        
+@media (max-width: 576px)
+    .career-card
+        margin-bottom: 15px
+    .card-title
+        font-size: 1.1rem
+    .card-text
+        font-size: 0.9rem
+    h1.title
+        font-size: 2rem
+    .career-card_text
+        font-size: 1rem
+    
+    .blue 
+        border-left: 3px solid #00BABF
+    
+    .yellow
+        border-left: 3px solid #ff9900
+
+@media (max-width: 992px)
+    .career-section_row__col_img
+        display: none !important
+
+.career-section_row__col_img
+    @media (max-width: 992px)
+        display: none !important
+
+// Стили для кнопки "Хочу посмотреть производство"
+.career-tour-btn
+    background: linear-gradient(90deg, #00BABF 0%, #008F93 100%)
+    color: #fff
+    border: none
+    border-radius: 50px
+    padding: 12px 25px
+    font-size: 1rem
+    font-weight: 600
+    display: flex
+    align-items: center
+    transition: all 0.3s ease
+    box-shadow: 0 4px 15px rgba(0, 186, 191, 0.3)
+    margin-bottom: 2rem
+    max-width: 100%
+    
+    &:hover
+        background: linear-gradient(90deg, #FFCC33 0%, #FF9900 100%)
+        transform: translateY(-3px)
+        box-shadow: 0 7px 20px rgba(255, 204, 51, 0.4)
+        color: #152233
+        
+    &:active
+        transform: translateY(1px)
+        box-shadow: 0 2px 10px rgba(255, 204, 51, 0.3)
+    
+    &-text
+        margin-right: 10px
+        
+    &-icon
+        display: flex
+        align-items: center
+        justify-content: center
+        transition: transform 0.3s ease
+        
+    &:hover &-icon
+        transform: translateX(3px)
+
+html, body
+    overflow-x: hidden
+    max-width: 100%
