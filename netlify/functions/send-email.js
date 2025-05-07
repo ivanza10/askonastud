@@ -3,7 +3,9 @@ const nodemailer = require('nodemailer');
 // Функция для создания транспорта почты
 const createTransporter = () => {
   return nodemailer.createTransport({
-    service: 'mail.ru',
+    host: 'smtp.mail.ru',
+    port: 465,
+    secure: true,
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
@@ -29,7 +31,15 @@ exports.handler = async (event, context) => {
   }
 
   try {
+    console.log('Received request body:', event.body);
     const { lastName, firstName, phone, email, direction } = JSON.parse(event.body);
+    
+    // Проверяем наличие всех необходимых данных
+    if (!lastName || !firstName || !phone || !email || !direction) {
+      throw new Error('Missing required fields');
+    }
+
+    console.log('Creating transporter...');
     const transporter = createTransporter();
 
     const mailOptions = {
@@ -67,19 +77,25 @@ exports.handler = async (event, context) => {
       `,
     };
 
-    await transporter.sendMail(mailOptions);
+    console.log('Sending email...');
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Email sent successfully:', info);
 
     return {
       statusCode: 200,
       headers,
-      body: JSON.stringify({ message: 'Email отправлен успешно' })
+      body: JSON.stringify({ message: 'Email отправлен успешно', info })
     };
   } catch (error) {
-    console.error('Ошибка отправки почты:', error);
+    console.error('Detailed error:', error);
     return {
       statusCode: 500,
       headers,
-      body: JSON.stringify({ error: 'Ошибка отправки почты' })
+      body: JSON.stringify({ 
+        error: 'Ошибка отправки почты',
+        details: error.message,
+        stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+      })
     };
   }
 }; 

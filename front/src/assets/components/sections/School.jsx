@@ -141,12 +141,12 @@ export default function School() {
     if (validateForm()) {
       setIsSubmitting(true);
       try {
-        await axios.post('/.netlify/functions/send-school-email', formData);
+        const response = await axios.post('/.netlify/functions/send-school-email', formData);
         setSubmitted(true);
       } catch (error) {
-        console.error('Ошибка при отправке формы:', error);
+        console.error('Ошибка при отправке формы:', error.response?.data || error.message);
         setErrors({
-          submit: 'Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже.'
+          submit: error.response?.data?.details || 'Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже.'
         });
       } finally {
         setIsSubmitting(false);

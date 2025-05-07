@@ -86,7 +86,7 @@ export default function Forms() {
 
     if (validateForm()) {
       try {
-        await axios.post("/.netlify/functions/send-email", formData);
+        const response = await axios.post("/.netlify/functions/send-email", formData);
         setSuccess(true);
         setFormData({
           lastName: "",
@@ -98,9 +98,11 @@ export default function Forms() {
         });
         setErrors({});
       } catch (error) {
-        console.error("Ошибка при отправке данных:", error);
+        console.error("Ошибка при отправке данных:", error.response?.data || error.message);
+        setErrors({
+          submit: error.response?.data?.details || 'Произошла ошибка при отправке формы. Пожалуйста, попробуйте позже.'
+        });
       } finally {
-        // Сбрасываем флаг после завершения операции
         setIsSubmitting(false);
       }
     } else {
