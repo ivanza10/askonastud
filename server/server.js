@@ -7,7 +7,13 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+// Настройка CORS
+app.use(cors({
+  origin: ['https://askona-frontend.vercel.app', 'http://localhost:5173'],
+  methods: ['GET', 'POST'],
+  credentials: true
+}));
+
 app.use(bodyParser.json());
 
 // Обслуживание статических файлов из директории front/dist
@@ -124,6 +130,11 @@ app.post('/send-school-email', async (req, res) => {
     console.error('Ошибка отправки почты:', error);
     res.status(500).send('Ошибка отправки почты.');
   }
+});
+
+// Проверка работоспособности сервера
+app.get('/health', (req, res) => {
+  res.status(200).send('OK');
 });
 
 // Обработка всех остальных маршрутов
