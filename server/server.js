@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 
 // Настройка CORS
 app.use(cors({
-  origin: ['https://askona-frontend.vercel.app', 'http://localhost:5173'],
+  origin: ['https://askonastud.vercel.app', 'http://localhost:5173'],
   methods: ['GET', 'POST'],
   credentials: true
 }));

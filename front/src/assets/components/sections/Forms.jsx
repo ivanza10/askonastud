@@ -86,7 +86,7 @@ export default function Forms() {
 
     if (validateForm()) {
       try {
-        const response = await axios.post("https://askona-backend.onrender.com/send-email", formData);
+        const response = await axios.post("https://askonastudback.onrender.com/send-email", formData);
         setSuccess(true);
         setFormData({
           lastName: "",

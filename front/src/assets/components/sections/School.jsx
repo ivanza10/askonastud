@@ -141,7 +141,7 @@ export default function School() {
     if (validateForm()) {
       setIsSubmitting(true);
       try {
-        const response = await axios.post('https://askona-backend.onrender.com/send-school-email', formData);
+        const response = await axios.post('https://askonastudback.onrender.com/send-school-email', formData);
         setSubmitted(true);
       } catch (error) {
         console.error('Ошибка при отправке формы:', error);
