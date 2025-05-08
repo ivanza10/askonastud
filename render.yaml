@@ -10,4 +10,5 @@ services:
       - key: EMAIL_PASS
         sync: false
       - key: EMAIL_TO
-        sync: false 
+        sync: false
+    healthCheckPath: /health 

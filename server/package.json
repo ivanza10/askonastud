@@ -1,19 +1,19 @@
 {
-  "name": "server",
+  "name": "askonastudback",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend for Askona student portal",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
-  "author": "ivan",
-  "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.3",
-    "cors": "^2.8.5",
-    "express": "^4.21.2",
-    "nodemailer": "^6.10.0"
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.9",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
   }
 }
