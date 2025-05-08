@@ -33,7 +33,6 @@ const VideoBlock = () => {
         <Col>
           <div className="video-container" style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
             <video
-              src="/video/Askona_HR_60sec_4K.mp4"
               className="video"
               controls
               playsInline
@@ -47,7 +46,10 @@ const VideoBlock = () => {
                 objectFit: 'cover'
               }}
             >
-              <source src="/video/Askona_HR_60sec_4K.mp4" type="video/mp4" />
+              <source 
+                src={isMobile ? "/video/Askona_HR_60sec_720p.mp4" : "/video/Askona_HR_60sec_4K.mp4"} 
+                type="video/mp4" 
+              />
               Ваш браузер не поддерживает видео тег.
             </video>
           </div>
