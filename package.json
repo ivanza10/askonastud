@@ -1,8 +1,0 @@
-{
-  "name": "askona-project",
-  "version": "1.0.0",
-  "description": "Askona project with frontend and serverless functions",
-  "dependencies": {
-    "nodemailer": "^6.10.0"
-  }
-} 
