@@ -2,8 +2,24 @@ import { Container, Row, Col } from "react-bootstrap";
 import { MdOutlineFactory } from "react-icons/md";
 import { GoPeople } from "react-icons/go";
 import { PiMedalFill } from "react-icons/pi";
+import { useEffect, useState } from "react";
 
 const VideoBlock = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, []);
+
   return (
     <Container className="my-5 text-center">
       <Row>
@@ -15,13 +31,25 @@ const VideoBlock = () => {
 
       <Row className="my-4">
         <Col>
-          <div className="video-container">
+          <div className="video-container" style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
             <video
               src="/video/Askona_HR_60sec_4K.mp4"
               className="video"
               controls
-              poster="/photo/back_2.png" // Добавь превью, если нужно
-            ></video>
+              playsInline
+              poster="/photo/back_2.png"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover'
+              }}
+            >
+              <source src="/video/Askona_HR_60sec_4K.mp4" type="video/mp4" />
+              Ваш браузер не поддерживает видео тег.
+            </video>
           </div>
         </Col>
       </Row>
