@@ -193,16 +193,16 @@ export default function Forms() {
             <Col md={8} className="text-center">
               <div className="direction-buttons">
                 <Button
-                  variant={formData.direction === "internship" ? "primary" : "outline-primary"}
-                  className={`direction-btn ${formData.direction === "internship" ? "active" : ""}`}
-                  onClick={() => setFormData({...formData, direction: "internship"})}
+                  variant={formData.direction === "Стажировка" ? "primary" : "outline-primary"}
+                  className={`direction-btn ${formData.direction === "Стажировка" ? "active" : ""}`}
+                  onClick={() => setFormData({...formData, direction: "Стажировка"})}
                 >
                   Стажировка
                 </Button>
                 <Button
-                  variant={formData.direction === "practice" ? "primary" : "outline-primary"}
-                  className={`direction-btn ${formData.direction === "practice" ? "active" : ""}`}
-                  onClick={() => setFormData({...formData, direction: "practice"})}
+                  variant={formData.direction === "Практика" ? "primary" : "outline-primary"}
+                  className={`direction-btn ${formData.direction === "Практика" ? "active" : ""}`}
+                  onClick={() => setFormData({...formData, direction: "Практика"})}
                 >
                   Практика
                 </Button>
