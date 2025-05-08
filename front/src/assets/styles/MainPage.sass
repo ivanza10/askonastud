@@ -1,0 +1,275 @@
+main
+    background: #1A2233
+
+.main
+    border-radius: 6.625rem
+    background: #21293F
+    height: auto
+    width: 100%
+
+.section_form
+    background: #152233
+    color: #fff
+    height: auto
+    &_title
+        font-size: 3rem // 48px -> 3rem
+    &_a
+        display: flex
+        color: #fff
+        line-height: 1.5rem // 24px -> 1.5rem
+        text-align: center
+        justify-content: center
+        align-items: center
+        &:hover
+            color: #3e689b
+    &_btn
+        color: #fff
+        border-radius: 1.25rem // 20px -> 1.25rem
+        background: #00BABF
+        width: 15.625rem // 250px -> 15.625rem
+        height: 3.4375rem // 55px -> 3.4375rem
+        border: 0
+        transition: all 0.3s ease
+        &:hover
+            transform: scale(1.05)
+            box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.4)
+            background-color: #FFCC33
+            color: #152233
+        &:active
+            transform: scale(0.95)
+            box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.2) // 2px -> 0.125rem, 10px -> 0.625rem
+    &_input
+        border-radius: 1.5625rem // 25px -> 1.5625rem
+        height: 2.8125rem // 45px -> 2.8125rem
+        background: #2A3448
+        color: #fff
+        border: 1px solid #384561
+
+.section_values
+    &_subtitle
+        max-width: 25rem // 200px -> 12.5rem
+    &_text
+        max-width: 30rem // 300px -> 18.75rem
+    &_title
+        font-family: glory_medium
+
+.section_values_card
+    height: 18.75rem // 300px -> 18.75rem
+    border-radius: 1.5625rem // 25px -> 1.5625rem
+    border: none
+    &-img
+        position: absolute
+        right: 0
+        bottom: -0.125rem // -2px -> -0.125rem
+        width: 21rem // 350px -> 21.875rem
+        height: 12.5rem // 200px -> 12.5rem
+
+    &_images
+        position: relative
+        width: 100%
+        height: auto
+    &-b
+        background-color: #CDEDFF
+    &-y
+        background-color: #FFF7B0
+
+.video_section_icons
+    height: 2.5rem // 40px -> 2.5rem
+    width: 2.5rem // 40px -> 2.5rem
+.video-container
+    width: 100%
+    max-width: 1200px
+    margin: auto
+
+.video
+    width: 100%
+    aspect-ratio: 16/9
+    border-radius: 10px
+    object-fit: cover
+@media (max-width: 992px)
+    .section_values_card-img
+        width: 20rem
+        height: auto
+    .section_values_title
+        font-size: 1.7rem
+    .about-content
+        margin-top: 1.5rem
+    .about-map-img
+        max-height: 400px
+        margin: 0 auto
+        display: block
+@media (max-width: 768px)
+    .about-point
+        margin-bottom: 1rem
+@media (max-width: 600px)
+    .main
+        border-radius: 0rem
+    .about-content
+        padding: 1.5rem
+    .about-point
+        flex-direction: column
+        align-items: center
+        text-align: center
+        
+        &-icon
+            margin-bottom: 1rem
+            margin-right: 0
+        
+        &-content
+            h5
+                text-align: center
+
+.section-with-background
+    background-image: url('/photo/back_1.png')
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    position: relative
+    padding: 4rem 0
+    color: #fff
+    
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: rgba(0, 0, 0, 0.6) // Полупрозрачный затемняющий слой
+        z-index: 1
+    
+    & > *
+        position: relative
+        z-index: 2 // Чтобы контент был поверх затемняющего слоя
+
+// Стили для компонента About
+.about-map-img
+    border-radius: 1rem
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2)
+    transition: transform 0.3s ease
+    max-height: 550px
+    object-fit: contain
+    
+
+.about-content
+    background: rgba(255, 255, 255, 0.15)
+    backdrop-filter: blur(10px)
+    padding: 2rem
+    border-radius: 1rem
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2)
+
+    .title
+        color: #fff
+        font-weight: 700
+        position: relative
+        display: inline-block
+        
+
+    .about-text
+        font-size: 1.1rem
+        line-height: 1.6
+        margin-top: 1.5rem
+
+.about-points
+    margin-top: 2rem
+
+    .about-point
+        display: flex
+        align-items: flex-start
+        background: rgba(255, 255, 255, 0.1)
+        border-radius: 10px
+        padding: 1rem
+        transition: all 0.3s ease
+        
+        &:hover
+            transform: translateY(-5px)
+            background: rgba(255, 255, 255, 0.2)
+            
+        &-icon
+            margin-right: 1rem
+            background: #FFCC33
+            width: 2.8rem
+            height: 2.8rem
+            border-radius: 50%
+            display: flex
+            align-items: center
+            justify-content: center
+            color: #012D72
+            flex-shrink: 0
+            
+        &-content
+            h5
+                font-weight: 600
+                margin-bottom: 0.5rem
+                color: #FFCC33
+                
+            p
+                margin-bottom: 0
+                font-size: 0.95rem
+                line-height: 1.4
+
+// Фон для секции со стадиями
+.section-with-stages-background
+    background-image: url('/photo/back_4.png')
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    position: relative
+    
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: rgba(21, 34, 51, 0.85) // Добавляем затемняющий слой
+        z-index: 0
+    
+    & > *
+        position: relative
+        z-index: 1
+
+// Фон для секции с направлениями
+.section-with-directions-background
+    background-image: url('/photo/back_5.png')
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    position: relative
+    
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: rgba(21, 34, 51, 0.8) // Темный затемняющий слой
+        z-index: 0
+    
+    & > *
+        position: relative
+        z-index: 1
+
+// Фон для секции с карьерой
+.section-with-career-background
+    background-image: url('/photo/back_2.png')
+    background-size: cover
+    background-position: center 
+    background-repeat: no-repeat
+    position: relative
+    
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: rgba(21, 34, 51, 0.8) // Темный затемняющий слой
+        z-index: 0
+    
+    & > *
+        position: relative
+        z-index: 1

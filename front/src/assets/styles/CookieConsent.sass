@@ -1,0 +1,30 @@
+.cookie-container
+  position: fixed
+  bottom: 20px
+  right: 20px
+  z-index: 1050
+
+.cookie-consent
+  max-width: 320px
+  background: #CDEDFF
+  color: #152233
+  border-radius: 10px
+  padding: 15px
+  font-size: 14px
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+  animation: fadeIn 0.5s ease-in-out
+
+  p
+    margin-bottom: 10px
+
+  button
+    padding: 6px 12px
+    font-size: 14px
+
+@keyframes fadeIn
+  from
+    opacity: 0
+    transform: translateY(20px)
+  to
+    opacity: 1
+    transform: translateY(0)

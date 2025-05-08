@@ -1,0 +1,201 @@
+.staff-section
+    position: relative
+    padding: 4rem 0
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    overflow: hidden
+    
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: rgba(21, 34, 51, 0.75)
+        z-index: 1
+    
+    .container
+        position: relative
+        z-index: 2
+
+.employee-card
+    overflow: hidden
+    position: relative
+    border: none
+    border-radius: 15px
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2)
+    margin-bottom: 1rem
+    height: 100%
+    transition: transform 0.3s ease
+    
+    &:hover
+        transform: translateY(-5px)
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3)
+    
+    .card-content
+        position: relative
+        height: 18rem
+        overflow: hidden
+    
+    .card-front
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-size: cover
+        background-position: center
+        transition: all 0.5s ease
+        
+        .card-overlay
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.7))
+            opacity: 1
+            transition: opacity 0.3s ease
+            display: flex
+            align-items: flex-end
+            justify-content: center
+            padding-bottom: 1rem
+            
+            .hover-hint
+                color: rgba(255, 255, 255, 0.9)
+                font-size: 0.9rem
+                text-align: center
+                opacity: 0.7
+                transition: opacity 0.3s ease
+    
+    &:hover
+        .card-front
+            transform: scale(1.1)
+            filter: blur(3px)
+            
+            .card-overlay
+                opacity: 0
+        
+        .card-back
+            opacity: 1
+            transform: translateY(0)
+            
+    .card-back
+        position: absolute
+        top: 0
+        left: 0
+        height: 100%
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 1.5rem
+        opacity: 0
+        transform: translateY(20px)
+        transition: all 0.5s ease
+        
+        .quote
+            margin: 0
+            text-align: center
+            font-size: 1rem
+            line-height: 1.5
+            font-weight: 500
+    
+    .card-footer
+        padding: 1.2rem
+        border-top: none
+        
+        .employee-name
+            font-size: 1.2rem
+            font-weight: 600
+            margin-bottom: 0.5rem
+            
+        .employee-position
+            font-size: 0.9rem
+            opacity: 0.8
+
+// Стили для карточек бирюзового цвета
+.turquoise-card
+    .card-back
+        background: linear-gradient(135deg, rgba(0, 186, 191, 0.95), rgba(0, 143, 147, 0.95))
+        
+    .card-footer
+        background: linear-gradient(135deg, rgba(0, 186, 191, 0.95), rgba(0, 143, 147, 0.95))
+        color: white
+
+// Стили для карточек желтого цвета
+.yellow-card
+    .card-back
+        background: linear-gradient(135deg, rgba(255, 204, 51, 0.95), rgba(255, 153, 0, 0.95))
+        
+    .card-footer
+        background: linear-gradient(135deg, rgba(255, 204, 51, 0.95), rgba(255, 153, 0, 0.95))
+        color: #152233
+
+// Стили для обратной стороны карточек
+.turquoise-back
+    .quote
+        color: white
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2)
+
+.yellow-back
+    .quote
+        color: #152233
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3)
+
+// Адаптивные стили
+@media (max-width: 992px)
+    .employee-card .card-content
+        height: 16rem
+
+@media (max-width: 768px)
+    .staff-section
+        padding: 3rem 0
+        
+    .employee-card
+        .card-content
+            height: 15rem
+            
+        .card-back .quote
+            font-size: 0.95rem
+
+@media (max-width: 576px)
+    .employee-card
+        margin-bottom: 1.5rem
+        
+        .card-content
+            height: 14rem
+            
+        .card-footer
+            padding: 1rem
+            
+            .employee-name
+                font-size: 1.1rem
+                
+            .employee-position
+                font-size: 0.85rem
+
+@media (max-width: 420px)
+    .employee-card
+        .card-back .quote
+            font-size: 0.9rem
+            padding: 0.5rem
+
+.section_staff
+    &_name
+        background: #CDEDFF
+        color: #152233
+    &_text
+        
+        color: #152233
+    &_card
+        border: none
+        border-radius: 25px
+@media (max-width: 385px)
+    .section_staff_text
+        font-size: 0.9rem
+@media (max-width: 321px)
+    .section_staff_text
+        font-size: 0.8rem
