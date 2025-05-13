@@ -18,7 +18,7 @@ const stages = [
 export default function StagesMobile() {
   return (
     <Container className="mobile-timeline-container mb-5">
-      <h1 className="text-center mobile-section-stages-title title">Этапы отбора на стажировку</h1>
+      <h1 className="text-center mobile-section-stages-title title">Этапы отбора на практику/стажировку</h1>
       <div className="mobile-timeline-line">
         <div className="mobile-moving-circle" />
         {stages.map((stage, index) => (

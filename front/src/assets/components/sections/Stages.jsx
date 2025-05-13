@@ -18,7 +18,13 @@ const stages = [
 export default function Stages() {
   return (
     <Container className="timeline-container mb-5">
-      <h1 className="text-center section_stages_title title">Этапы отбора на стажировку</h1>
+      <h1 className="text-center section_stages_title title">Этапы отбора на практику/стажировку</h1>
+      <div className="section_stages_title_circle">
+        <img src="/photo/circle1.png" alt="кружок" fluid />
+        <div className="circle-text">
+          <span>ОТБОР НА ПРАКТИКУ/СТАЖИРОВКУ <br /> ИДЁТ ЦЕЛЫЙ ГОД</span>
+        </div>
+      </div>
       <div className="timeline-line">
         {stages.map((stage, index) => (
           <div

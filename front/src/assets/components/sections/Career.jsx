@@ -32,11 +32,11 @@ export default function Career() {
           <Col md={7} className="career-section_row__content pt-5">
             <div className="d-flex justify-content-center mb-4">
               <Button className="career-tour-btn" onClick={handleTourClick}>
-                <span className="career-tour-btn-text">Хочу попасть на стажировку</span>
+                <span className="career-tour-btn-text">Хочу попасть на практику/стажировку</span>
                 <span className="career-tour-btn-icon">
                   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M9 0.5C4.3 0.5 0.5 4.3 0.5 9C0.5 13.7 4.3 17.5 9 17.5C13.7 17.5 17.5 13.7 17.5 9C17.5 4.3 13.7 0.5 9 0.5ZM9 15.5C5.4 15.5 2.5 12.6 2.5 9C2.5 5.4 5.4 2.5 9 2.5C12.6 2.5 15.5 5.4 15.5 9C15.5 12.6 12.6 15.5 9 15.5Z" fill="currentColor"/>
-                    <path d="M7 12.8L11.3 9L7 5.2L7.7 4.5L12.7 9L7.7 13.5L7 12.8Z" fill="currentColor"/>
+                    <path d="M9 0.5C4.3 0.5 0.5 4.3 0.5 9C0.5 13.7 4.3 17.5 9 17.5C13.7 17.5 17.5 13.7 17.5 9C17.5 4.3 13.7 0.5 9 0.5ZM9 15.5C5.4 15.5 2.5 12.6 2.5 9C2.5 5.4 5.4 2.5 9 2.5C12.6 2.5 15.5 5.4 15.5 9C15.5 12.6 12.6 15.5 9 15.5Z" fill="currentColor" />
+                    <path d="M7 12.8L11.3 9L7 5.2L7.7 4.5L12.7 9L7.7 13.5L7 12.8Z" fill="currentColor" />
                   </svg>
                 </span>
               </Button>
@@ -47,7 +47,7 @@ export default function Career() {
                   <Card.Body>
                     <Card.Title>
                       <h5 className="text_medium career-card_text">
-                        Совмещай стажировку с учебой
+                        Совмещай практику/стажировку с учёбой
                       </h5>
                     </Card.Title>
                   </Card.Body>
@@ -58,7 +58,7 @@ export default function Career() {
                   <Card.Body>
                     <Card.Title>
                       <h5 className="text_medium career-card_text">
-                        У тебя есть возможность попасть в штат
+                        Есть возможность попасть в штат
                       </h5>
                     </Card.Title>
                   </Card.Body>
@@ -69,7 +69,7 @@ export default function Career() {
                   <Card.Body>
                     <Card.Title>
                       <h5 className="text_medium career-card_text">
-                        Ты будешь учиться под руководством экспертов
+                        Учись под руководством экспертов
                       </h5>
                     </Card.Title>
                   </Card.Body>
@@ -80,7 +80,7 @@ export default function Career() {
                   <Card.Body>
                     <Card.Title>
                       <h5 className="text_medium career-card_text">
-                        Сможешь принять участие в масштабных проектах
+                        Принимай участие в масштабных проектах
                       </h5>
                     </Card.Title>
                   </Card.Body>
