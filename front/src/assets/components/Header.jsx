@@ -58,7 +58,7 @@ export default function Header() {
     if (window.scrollY < lastScrollY) {
       setShowHeader(true);
     } else {
-      setShowHeader(false);
+      setShowHeader(true);
     }
     lastScrollY = window.scrollY;
   };
@@ -176,7 +176,7 @@ export default function Header() {
                   href="/#action6" 
                   onClick={(e) => handleNavLinkClick(e, '#action6')}
                 >
-                  <span className="navbar_btn_text">Хочу работать в Асконе</span>
+                  <span className="navbar_btn_text">Подай заявку прямо сейчас!</span>
                 </Button>
               </Form>
             </Offcanvas.Body>
